@@ -57,10 +57,16 @@ All the process we need to deploy our webservers has been codified in the shell 
 Step 1: Provision an EC2 instance running ubuntu 20.04. You can refer to the course Implementing load balancer with
 Nginx for a refresher
 
+![alb](./img/ALB1.png)
+
 Step 2: Open port 8000 to allow traffic from anyhere using the security group. Again refer to the course mentioned above
 in step one for a refresher
 
+![alb](./img/ALB2.png)
+
 Step 3: Connect to the webserver via the terminal using SSH cleint
+
+![alb](./img/ALB8.png)
 
 Step 4: Open a file, paste the script above and close the file using the command below:
 
@@ -72,9 +78,15 @@ Step 5: Change the permissions on the file to make an executable using the comma
 
 `sudo chmod +x install.sh`
 
+![alb](./img/ALB4.png)
+
 Step 6: Run the shell script using the command below. Make sure you read the instructions in the shell script to learn how
 to use it.
 `./install.sh PUBLIC_IP`
+
+![alb](./img/ALB5.png)
+
+![alb](./img/ALB6.png)
 
 ## Deployment of Nginx as a Load Balancer using Shell script
 
@@ -128,4 +140,29 @@ Read the instrictions carefully in the script to learn how to use the script.
 `sudo nginx -t`
 `sudo systemctl restart nginx`
 
+![alb](./img/ALB14.png)
+
 ## Steps to Run the Shell Script
+
+Step 1: On your terminal, open a file nginx.sh using the command below:
+
+`sudo vi nginx.sh`
+
+Step 2: Copy and Paste the script inside the file
+Step 3: Close the file using the command below:
+type esc the shift + :wqa!
+Step 4: Change the file permission to make it an executable using the command below:
+sudo chmod +x nginx.sh
+Step 5: Run the script with the command below:
+./nginx.sh PUBLIC_IP Webserver-1 Webserver-2
+
+![alb](./img/ALB15.png)
+
+![alb](./img/ALB16.png)
+
+Verifying the setup
+
+![ALB](./img/ALB17.png)
+
+![alb](./img/ALB18.png)
+
